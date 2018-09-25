@@ -1,0 +1,22 @@
+.section.hero
+  .hero__header
+    .header__socials
+      ul.socials
+        - var socials = ['vk', 'skype', 'telegram_logo']
+        each item in socials
+          li.socials__item
+            a(href="#").socials__link.socials__link_header
+              +icon(`${item}`, 'socials__icon')
+    .hero__hamburger
+      +icon('hamburger', 'hamburger__icon')
+  .hero__user
+    .user
+      .avatar.avatar_width
+        img.avatar__img(src="./assets/images/photo/photo.jpg", alt="")
+      .user__desc
+        .title-norm.title-norm_color_white Шапиро Дмитрий
+        .user__desc.user__desc_color_white Личный сайт веб разработчика
+  .hero__decor
+    +icon('portfolio_header', 'hero__decor-icon')
+  .hero__arrow
+    +icon('arrow_down', 'hero__arrow-icon')

@@ -1,0 +1,39 @@
+.socials{
+  font-size: 0;
+}
+.socials__item{
+  display: inline-block;
+}
+.socials__link{
+  padding: 12px;
+
+  &:hover{
+    .socials__icon{
+      fill: rgba(0,191,165, 1);
+    }
+  }
+}
+.socials__icon{
+  fill: rgba(0,191,165, .5);
+  height: 29px;
+  width: 29px;
+  transition: fill .2s;
+}
+
+.socials__link_header{
+  display: inline-block;
+  padding: 12px;
+  margin-right: 2px;
+
+  .socials__icon{
+    width: 30px;
+    height: 30px;
+    fill: rgba(255,255,255, .5);
+    transition: fill .2s;
+  }
+  &:hover{
+    .socials__icon{
+      fill: rgba(255,255,255, 1);
+    }
+  }
+}

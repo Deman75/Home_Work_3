@@ -1,6 +1,31 @@
 extends ../auth.layout.pug
 
 block content
-  .hello-world
-    +icon('check', 'hello-world__block')
-    .inlined-svg
+  .wrapper
+    .section.section__index
+      .authoriz
+        a(href="").authoriz__link Авторизация
+      .welcome
+        .welcome__content
+          .welcome__content-avatar
+            .avatar
+              img.avatar__img(src="./assets/images/photo/photo.jpg", alt="")
+          .welcome__content-desc
+            .title-norm Шапиро Дмитрий
+            .user__desc Личный сайт веб разработчика
+          .welcome__content-socials
+            include ../common/socials.pug            
+        .welcome__buttons
+          ul.button
+            - 
+              var buttons = [
+                ['Мои работы', './works.html'],
+                ['Обо мне', './about.html'],
+                ['Блог', './about.html'],
+              ]
+            each item in buttons
+              li.button__item
+                a(href=`${item[1]}`).button__links #{item[0]}
+      .section__index-copiright
+        .copiright
+          p © Дмитирй Шапиро | создано с любовью в LoftSchool | 2018

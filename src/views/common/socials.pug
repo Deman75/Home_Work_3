@@ -1,0 +1,6 @@
+ul.socials
+  - var socials = ['vk', 'skype', 'telegram_logo']
+  each item in socials
+    li.socials__item
+      a(href="#").socials__link
+        +icon(`${item}`, 'socials__icon')
