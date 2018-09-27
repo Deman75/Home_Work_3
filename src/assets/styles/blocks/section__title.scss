@@ -1,6 +1,6 @@
 .section__title{
   position: relative;
-  padding: 60px 0;
+  padding: 44px 0 50px 0;
   background-color: #faf8f0;
   display: flex;
   justify-content: center;
@@ -11,11 +11,17 @@
   &:before{
     content: '';
     position: absolute;
-    height: 100px;
+    height: 160px;
     width: 100%;
     left: 0;
-    top: -100px;
+    top: -160px;
     background-color: #faf8f0;
     clip-path: polygon(50% 97%, 100% 0, 100% 100%, 0 100%, 0 0);
   }
+}
+.title__title{
+  max-width: 380px;
+}
+.section__title_background_transparent{
+  background-color: transparent;
 }

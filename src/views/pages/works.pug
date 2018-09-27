@@ -23,13 +23,64 @@ block content
         .slider__main
           .slider__main-img-wrap
             img(src="./assets/images/works/work-1.png", alt="").slider__main-img-img
-        .slider__down
-          img(src="./assets/images/works/work-2.png", alt="").slider__preveiw
+        .slider__button
+          .slider__preveiw
+            img(src="./assets/images/works/work-2.png", alt="").slider__preveiw-img
           .slider__filter
             .slider__arrow_down
               +icon('arrow_down','slider__arrow-icon')
-        .slider__up
-          img(src="./assets/images/works/work-3.png", alt="").slider__preveiw
+        .slider__button
+          .slider__preveiw
+            img(src="./assets/images/works/work-3.png", alt="").slider__preveiw-img
           .slider__filter
             .slider__arrow_up
               +icon('arrow_down','slider__arrow-icon')
+              
+  
+  section.section.works__reviews
+    .section__title.section__title_background_transparent
+      .title
+        .title__background
+          +icon('about_header', 'title__background-icon')
+        .title__title Что обо мне говорят
+    .review
+      ul.review__list
+        li.review__item
+          +icon('quote-left','review__item-icon')
+          .review__desc
+            p
+              | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессоных ночей!
+          .review__user
+            .avatar.avatar_reviews
+              img.avatar__img(src="./assets/images/photo/Dmitriy.png", alt="")
+            .review__user-name
+              .review__desc-name Ковальчук Дмитрий
+              .review__desc-text основатель LoftSchool
+        li.review__item
+          +icon('quote-left','review__item-icon')
+          .review__desc
+            p
+              | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессоных ночей!
+          .review__user
+            .avatar.avatar_reviews
+              img.avatar__img(src="./assets/images/photo/Dmitriy.png", alt="")
+            .review__user-name
+              .review__desc-name Ковальчук Дмитрий
+              .review__desc-text основатель LoftSchool
+    .feedback
+      .feedback__blur
+      .feedbacl__form
+        form(method="post").form
+          .subtitle Связаться со мно
+          .form__row
+            input.form__cont(type="text" name="name" placeholder="Имя")
+          .form__row
+            input.form__cont(type="text" name="email" placeholder="Email")
+          .form__row
+            textarea.form__mesage(name="message" rows="8" cols="80" placeholder="Ваше сообщение")
+          .form__row
+            input.form__button(type="submit" name="send" value="Отправить")
+            input.form__button(type="submit" name="clear" value="Очитстиь")
+    .button-up
+      .button-up__icon
+        +icon('arrow_down','button-up__icon-icon')
