@@ -1,0 +1,39 @@
+.contact{
+ position: absolute;
+ display: inline-block;
+ width: 380px;
+ z-index: 2;
+ top: 50%;
+ left: 50%;
+ transform: translateX(-50%) translateY(-50%);
+ background-color: rgba(255,255,255, .85);
+ padding: 26px 40px;
+ border-radius: 5px;
+}
+
+.contact__list{
+  margin: 30px 0px 0px 0px;
+}
+
+.contact__link{
+  color: $text-color;
+  font-weight: 500;
+  display: flex;
+  margin: 17px 0px 17px 0px;
+  transition: color .3s;
+
+  &:hover{
+    color: $green;
+    .contact__item-icon {
+      fill: $text-color;
+    }
+  }
+}
+
+.contact__item-icon{
+ width: 25px;
+ height: 25px;
+ fill: $green;
+ margin: 0px 9px 0px 0px;
+ transition: fill .3s;
+}
