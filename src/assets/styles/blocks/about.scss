@@ -1,5 +1,6 @@
 .about {
   position: relative;
+  height: auto;
 }
 .section__title_arrow_about {
   &:before{
@@ -8,7 +9,7 @@
 }
 .about__left, .about__right {
   display: flex;
-  height: 100%;
+  min-height: 100%;
   width: 50%;
 }
 
@@ -20,13 +21,43 @@
   background-color: #eeebdf;
   flex-direction: column;
 }
-
+.about__title{
+  margin: -10px 0 0 63px;
+}
 .about__about {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 15px;
+}
+.photo__wrap{
+  width: 434px;
+  height: 388px;
+  overflow: hidden;
+}
+.photo__img{
+  width: 100%;
 }
 
+.about__desc{
+  margin-top: 28px;
+}
+.about__text {
+  padding: 27px 35px 0;
+}
+
+.about__right-desc {
+  margin-top: 20px;
+  padding: 0 50px 0 39px;
+}
+
+.about__skills {
+  margin-top: 44px;
+  padding-left: 38px
+}
+.skills__item{
+  margin-bottom: 28px;
+}
 .skills__title{
   font-weight: 500;
   color: $text-color;
@@ -40,8 +71,8 @@
   margin-right: 36px;
 }
 .skills-bar{
-  width: 110px;
-  height: 110px;
+  width: 123px;
+  height: 123px;
   position: relative;
 
   &:hover{
@@ -89,4 +120,53 @@
   font-weight: 500;
   color: $green;
   font-size: 13px;
+}
+
+.map {
+  position: relative;
+}
+
+.yandex__map {
+  width: 100%;
+  margin-bottom: -200px;
+}
+
+.contact{
+ position: absolute;
+ display: inline-block;
+ width: 380px;
+ z-index: 2;
+ top: 50%;
+ left: 50%;
+ transform: translateX(-50%) translateY(-50%);
+ background-color: rgba(255,255,255, .85);
+ padding: 26px 40px;
+ border-radius: 5px;
+}
+
+.contact__list{
+  margin: 30px 0px 0px 0px;
+}
+
+.contact__link{
+  color: $text-color;
+  font-weight: 500;
+  display: flex;
+  margin: 17px 0px 17px 0px;
+  transition: color .3s;
+
+  &:hover{
+    color: $green;
+    .contact__item-icon {
+      fill: $text-color;
+    }
+  }
+}
+
+.contact__item-icon{
+ width: 25px;
+ height: 25px;
+ fill: $green;
+ margin: 0px 9px 0px 0px;
+ transition: fill .3s;
 }

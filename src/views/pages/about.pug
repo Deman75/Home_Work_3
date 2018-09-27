@@ -26,7 +26,10 @@ block content
               | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
     .about__right
       .about__right-subtitle
-        .subtitle Чем я могу быть вам полезен
+        .subtitle
+         | Чем я могу быть
+         br
+         | вам полезен
       .about__right-desc
         .right-desc__text
           p
@@ -54,3 +57,34 @@ block content
                           style=`stroke-dashoffset: ${ 100-skill[1] }; stroke:rgba(0, 191, 165,  ${ (skill[1]*0.01)+0.2 })`
                         )
                       .skills-bar__title= skill[0]
+  section.section.map
+    .yandex__map
+      script(type="text/javascript" charset="utf-8" async="" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A30a3ecd52b152b51e64d8f157471440298fcdb5b0cb945e8d0e6552f8cf6f668&width=100%&height=100%&lang=ru_RU&scroll=false")
+    .contact
+      .subtitle
+        | Контакты
+      ul.contact__list
+        li.contact__item
+          a(href="skype:dmitriy-shapiro").contact__link
+            svg.contact__item-icon
+              use(xlink:href="./assets/images/icons/sprite.svg#skype")
+            .contact__item-desc
+              | dmitriy-shpapiro
+        li.contact__item
+          a(href="mailto:deman75@yandex.ru").contact__link
+            svg.contact__item-icon
+              use(xlink:href="./assets/images/icons/sprite.svg#envelope")
+            .contact__item-desc
+              | dema75@yandex.ru
+        li.contact__item
+          a(href="tel:+73213322112").contact__link
+            svg.contact__item-icon
+              use(xlink:href="./assets/images/icons/sprite.svg#phone")
+            .contact__item-desc
+              | +7 321 332 21 12
+        li.contact__item
+          a(href="#").contact__link
+            svg.contact__item-icon
+              use(xlink:href="./assets/images/icons/sprite.svg#map_marker")
+            .contact__item-desc
+              | г.Одинцово, ул. Сколковская, д.7

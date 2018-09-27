@@ -1,5 +1,8 @@
 .footer{
-  background-color: $grey;
+  position: relative;
+  z-index: 10;
+  //background-color: $grey;
+  background-color: rgba(55,62,66, .85);
   color: #fff;
   padding: 0 25px 0 30px;
 }
