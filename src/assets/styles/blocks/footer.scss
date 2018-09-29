@@ -1,10 +1,13 @@
 .footer{
   position: relative;
   z-index: 10;
-  //background-color: $grey;
   background-color: rgba(55,62,66, .85);
   color: #fff;
   padding: 0 25px 0 30px;
+
+  @include tablet {
+    padding-bottom: 10px;
+  }
 }
 .footer__row{
   height: 74px;
@@ -15,10 +18,21 @@
   &:first-child{
     border-bottom: solid 1px rgba(255,255,255, .1);
   }
+
+  @include tablet {
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    padding: 20px 0 0 0;
+  }
 }
 
 .footer__menu{
   display: flex;
+
+  @include tablet {
+    margin-top: 8px;
+  }
 }
 
 .footer__menu-item:first-child{
@@ -40,6 +54,10 @@
 
 .footer__socials{
   display: flex;
+
+  @include tablet {
+    margin: 9px 0 13px 0;
+  }
 }
 .socials__link_footer {
   display: flex;
@@ -79,5 +97,17 @@
 
   &:last-child{
     justify-content: flex-end;
+
+    @include tablet {
+      justify-content: center;
+    }
+  }
+
+  @include tablet {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 12px;
   }
 }

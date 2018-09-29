@@ -6,19 +6,26 @@
   align-items: center;
   flex-direction: column;
   overflow: hidden;
+
+  @include tablet {
+    font-size: 14px;
+  }
 }
-.form__row{
+.form__title {
+  margin-bottom: 20px;
+}
+.form__row {
   margin: 10px 0;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 
-  &:last-child{
+  &:last-child {
     margin-bottom: 0;
   }
 }
-.form__cont{
+.form__cont {
   padding: 12px 17px;
   border: 1px solid transparent;
   outline: none;
@@ -29,11 +36,16 @@
     color: rgba(55,62,66, .3);
   }
 
-  &:focus{
+  &:focus {
     border: 1px solid #000;
   }
+
+  @include tablet {
+    width: 310px;
+    padding: 13px 18px;
+  }
 }
-.form__mesage{
+.form__mesage {
   padding: 12px 17px;
   width: 340px;
   height: 140px;
@@ -43,16 +55,20 @@
   resize: none;
   color: $text-color;
 
-  &::placeholder{
+  &::placeholder {
     color: rgba(55,62,66, .3);
   }
 
-  &:focus{
+  &:focus {
     border: 1px solid #000;
+  }
+
+  @include tablet {
+    width: 310px;
   }
 }
 
-.form__button{
+.form__button {
   flex: 1;
   margin: 0;
   padding: 13px 0;
@@ -63,11 +79,15 @@
   transition: background-color .3s;
   cursor: pointer;
 
-  &:first-child{
+  &:first-child {
     border-right: 1px solid rgba(222,227,231, .5);
   }
 
-  &:hover{
+  &:hover {
     background-color: rgba(0,191,165, .3);
+  }
+
+  @include tablet {
+    font-size: 14px;
   }
 }

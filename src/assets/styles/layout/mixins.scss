@@ -1,0 +1,29 @@
+// @function rem($px) {
+//   @return $px / 16px + 0rem;
+// }
+
+@mixin desktophd{
+  @media screen and (max-width: 1800px) {
+    @content;
+  }
+}
+@mixin desktop{
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin laptop{
+  @media screen and (max-width: 980px) {
+    @content;
+  }
+}
+@mixin tablet{
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin phone{
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
