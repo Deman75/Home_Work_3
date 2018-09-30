@@ -8,9 +8,9 @@ block content
     .about__left
       .about__title
         .title.title_about
-          .title__background
-            +icon('about_header', 'title__background-icon')
           .title__title Обо мне
+            .title__background
+              +icon('about_header', 'title__background-icon')
       .about__about
         .about__photo
           .photo__wrap
@@ -25,15 +25,14 @@ block content
               br
               | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
     .about__right
-      .about__right-subtitle
-        .subtitle
-         | Чем я могу быть
-         br
-         | вам полезен
-      .about__right-desc
-        .right-desc__text
-          p
-            | Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+      .about__right-title
+        .about__right-subtitle
+          .subtitle.subtitle_font_about
+           | Чем я могу быть вам полезен
+        .about__right-desc
+          .right-desc__text
+            p
+              | Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
       .about__skills
         ul.skills
           - 
@@ -58,8 +57,6 @@ block content
                         )
                       .skills-bar__title= skill[0]
   section.section.map
-    .yandex__map
-      script(type="text/javascript" charset="utf-8" async="" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A30a3ecd52b152b51e64d8f157471440298fcdb5b0cb945e8d0e6552f8cf6f668&width=100%&height=100%&lang=ru_RU&scroll=false")
     .contact
       .subtitle
         | Контакты
@@ -88,3 +85,5 @@ block content
               use(xlink:href="./assets/images/icons/sprite.svg#map_marker")
             .contact__item-desc
               | г.Одинцово, ул. Сколковская, д.7
+    .yandex__map
+      script(type="text/javascript" charset="utf-8" async="" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A30a3ecd52b152b51e64d8f157471440298fcdb5b0cb945e8d0e6552f8cf6f668&width=100%&height=100%&lang=ru_RU&scroll=false")

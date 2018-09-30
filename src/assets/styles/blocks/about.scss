@@ -1,20 +1,44 @@
 .about {
   position: relative;
-  height: auto;
+
+  @include desktophd {
+    min-height: 800px;
+  }
+  @include desktop {
+    min-height: 800px;
+  }
+  @include tablet {
+    min-height: auto;
+    height: auto;
+    flex-direction: column;
+  }
 }
 .section__title_arrow_about {
   &:before{
     background: linear-gradient(90deg, #efeee9 50%, #eeebdf 0);
+
+    @include tablet {
+      background: linear-gradient(90deg, #efeee9 50%, #efeee9 0);
+    }
   }
 }
 .about__left, .about__right {
   display: flex;
   min-height: 100%;
   width: 50%;
+
+  @include tablet {
+    width: 100%;
+  }
 }
 
 .about__left {
   background-color: #efeee9;
+
+  @include desktop {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .about__right {
@@ -22,45 +46,148 @@
   flex-direction: column;
 }
 .about__title{
-  margin: -10px 0 0 63px;
+  display: inline-block;
+  margin-top: -10px;
+  width: 50%;
+
+  @include desktop {
+    width: 100%;
+  }
+  @include tablet {
+    margin-top: 30px;
+  }
+
+  @include phone {
+    margin-top: 20px;
+  }
 }
 .about__about {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 15px;
+  width: 50%;
+
+  @include desktop {
+    width: 73%;
+  }
+  @include tablet {
+    width: 62%;
+    margin-top: 35px;
+  }
+  @include phone {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+.about__photo {
+  width: 100%;
+
+  @include desktop {
+    margin-bottom: 20px;
+  }
+
+  @include tablet {
+    margin-bottom: 35px;
+  }
+
+  @include phone {
+    margin-bottom: 20px;
+  }
 }
 .photo__wrap{
-  width: 434px;
-  height: 388px;
+  width: 95%;
   overflow: hidden;
+
+  @include desktop {
+    width: 100%;
+  }
+
+  @include tablet {
+    max-height: 417px;
+  }
+  @include phone {
+    max-height: 290px;
+  }
 }
 .photo__img{
   width: 100%;
 }
 
 .about__desc{
-  margin-top: 28px;
+  @include phone {
+    width: 95%;
+  }
 }
 .about__text {
-  padding: 27px 35px 0;
+  padding: 27px 0;
+
+  @include phone {
+    padding: 10px 0 5px 0;
+    font-size: 14px;
+  }
+}
+.about__right-title {
+  text-align: center;
+  margin: 0 auto;
+
+  @include tablet {
+    margin-top: 25px;
+    width: 73%;
+    font-size: 14px;
+  }
+
+  @include phone {
+    width: 95%;
+  }
+}
+.about__right-subtitle {
+  margin: 0 auto;
+  width: 340px;
+
+  @include tablet {
+    width: 310px;
+  }
+  @include phone {
+    width: 220px;
+  }
 }
 
 .about__right-desc {
   margin-top: 20px;
   padding: 0 50px 0 39px;
+
+  @include tablet {
+    margin-top: 5px;
+    padding: 0;
+  }
 }
 
 .about__skills {
-  margin-top: 44px;
-  padding-left: 38px
+  margin-top: 20px;
+  padding-left: 38px;
+
+  @include tablet {
+    padding: 0;
+  }
 }
 
 .map {
   position: relative;
+
+  @include phone {
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+  }
 }
 
 .yandex__map {
   width: 100%;
   margin-bottom: -200px;
+
+  @include phone {
+    height: 100vh;
+    min-height: 100vh;
+  }
 }

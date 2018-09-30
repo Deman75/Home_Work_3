@@ -108,6 +108,10 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 72px;
+
+  @include phone {
+    bottom: 58px;
+  }
 }
 
 .hero__arrow-icon{
@@ -119,5 +123,10 @@
 
   &:hover{
     fill: rgba(255,255,255, 1);
+  }
+
+  @include phone {
+    width: 26px;
+    height: 16px;
   }
 }

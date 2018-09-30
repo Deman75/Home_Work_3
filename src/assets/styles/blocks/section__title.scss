@@ -10,26 +10,35 @@
   @include tablet {
     padding: 31px 0 34px 0;
   }
+
+  @include phone {
+    padding: 8px 0 28px 0;
+  }
 }
 .section__title_arrow {
   &:before {
     content: '';
     position: absolute;
-    height: 85%;
+    height: 161px;
     width: 100%;
     left: 0;
-    top: -85%;
+    top: -159px;
     background-color: #faf8f0;
     clip-path: polygon(50% 97%, 100% 0, 100% 100%, 0 100%, 0 0);
 
     @include desktop {
-      height: 60%;
-      top: -60%;
+      height: 111px;
+      top: -109px;
     }
 
     @include tablet {
-      height: 50%;
-      top: -50%;
+      height: 71px;
+      top: -69px;
+    }
+
+    @include phone {
+      height: 31px;
+      top: -29px;
     }
   }
 }
