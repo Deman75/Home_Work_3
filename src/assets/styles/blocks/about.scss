@@ -156,14 +156,18 @@
 .about__right-desc {
   margin-top: 20px;
   padding: 0 50px 0 39px;
+  text-align: left;
 
   @include tablet {
     margin-top: 5px;
     padding: 0;
+    text-align: center;
   }
 }
 
 .about__skills {
+  width: 100%;
+  height: 100%;
   margin-top: 20px;
   padding-left: 38px;
 

@@ -1,5 +1,11 @@
 extends ../main.layout.pug
 
+block variables
+  - var title = 'Обо мне'
+
+block scripts
+  script(src='about.bundle.js')
+
 block content
   section
     include ../common/hero.pug
@@ -34,28 +40,7 @@ block content
             p
               | Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
       .about__skills
-        ul.skills
-          - 
-            var skills = [
-                ['Frontend', [['HTML5', 50], ['CSS', 70], ['JavaScript & jQuery', 30]]],
-                ['Backend', [['PHP', 20], ['mySQL', 10], ['Node.js & npm', 65], ['Mongo.db', 40]]],
-                ['WorkFlow', [['Git', 90], ['Gulp', 83], ['Bower', 10]]],
-              ]
-          each item in skills
-            li.skills__item
-              .skills__title=item[0]
-              ul.skills__list
-                each skill in item[1]
-                  li.skills__list-item
-                    .skills-bar
-                      svg.skills-bar__icon(xmlns="http://www.w3.org/2000/svg" viewbox="-3.5 -3.5 39.5 39.5")
-                        circle.skills-bar__background(cx="16" cy="16" r="15.9155")
-                        circle.skills-bar__progress.skills-bar__percent(
-                          cx="16" cy="16" 
-                          r="15.9155" 
-                          style=`stroke-dashoffset: ${ 100-skill[1] }; stroke:rgba(0, 191, 165,  ${ (skill[1]*0.01)+0.2 })`
-                        )
-                      .skills-bar__title= skill[0]
+        #skills-component
   section.section.map
     .contact
       .subtitle
