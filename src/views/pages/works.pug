@@ -1,5 +1,11 @@
 extends ../main.layout.pug
 
+block variables
+  - var title = 'Мои работы'
+
+block scripts
+  script(src='works.bundle.js')
+
 block content
   section
     include ../common/hero.pug
@@ -9,20 +15,21 @@ block content
         +icon('works_header', 'title__background-icon')
       .title__title Мои работы
   section.section.works
-    .works__left
-      .works__title
-        .subtitle Сайт школы онлайн образования
-      .works__tech 
-        .works__tech-desc HTML, CSS, JavaScript
-      .works__link
-        a(href="#").link__link
-          +icon('link','link__icon')
-          | Просмотреть сайте
-    .works__right
-      .slider
+    .slider
+      .slider__info
+        .works__title
+          .subtitle Сайт школы онлайн образования
+        .works__tech 
+          .works__tech-desc HTML, CSS, JavaScript
+        .works__link
+          a(href="#").link__link
+            +icon('link','link__icon')
+            | Просмотреть сайте
+      .slider__display
         .slider__main
           .slider__main-img-wrap
             img(src="./assets/images/works/work-1.png", alt="").slider__main-img-img
+      .slider__buttons
         .slider__button
           .slider__preveiw
             img(src="./assets/images/works/work-2.png", alt="").slider__preveiw-img
