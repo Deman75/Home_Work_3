@@ -1,9 +1,30 @@
 extends ../main.layout.pug
 
 block content
-  section
-    include ../common/hero.pug
-  section.section.blog
+  section.section.hero
+    .hero__header
+      .header__socials
+        ul.socials
+          - var socials = ['vk', 'skype', 'telegram_logo']
+          each item in socials
+            li.socials__item
+              a(href="#").socials__link.socials__link_header
+                +icon(`${item}`, 'socials__icon')
+      .hero__hamburger
+        +icon('hamburger', 'hamburger__icon')
+    .hero__user
+      .user
+        .avatar.avatar_width
+          img.avatar__img(src="./assets/images/photo/photo.jpg", alt="")
+        .user__info.user__info_margin
+          .title.title_color_white
+            .title__title Блог
+              .title__background
+                +icon('blog_header', 'title__background-icon')
+          .user__desc.user__desc_color_white Статьи которые я написал
+    .hero__arrow
+      +icon('arrow_down', 'hero__arrow-icon')
+  section.section.section__blog
     .section__title_arrow.section__title_arrow_blog
     .blog__content
       .content__menu
