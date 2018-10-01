@@ -15,33 +15,7 @@ block content
         +icon('works_header', 'title__background-icon')
       .title__title Мои работы
   section.section.works
-    .slider
-      .slider__info
-        .works__title
-          .subtitle Сайт школы онлайн образования
-        .works__tech 
-          .works__tech-desc HTML, CSS, JavaScript
-        .works__link
-          a(href="#").link__link
-            +icon('link','link__icon')
-            | Просмотреть сайте
-      .slider__display
-        .slider__main
-          .slider__main-img-wrap
-            img(src="./assets/images/works/work-1.png", alt="").slider__main-img-img
-      .slider__buttons
-        .slider__button
-          .slider__preveiw
-            img(src="./assets/images/works/work-2.png", alt="").slider__preveiw-img
-          .slider__filter
-            .slider__arrow_down
-              +icon('arrow_down','slider__arrow-icon')
-        .slider__button
-          .slider__preveiw
-            img(src="./assets/images/works/work-3.png", alt="").slider__preveiw-img
-          .slider__filter
-            .slider__arrow_up
-              +icon('arrow_down','slider__arrow-icon')
+    #slider-component
               
   
   section.section.works__reviews

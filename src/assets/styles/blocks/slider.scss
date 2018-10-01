@@ -4,9 +4,27 @@
   background-color: #f0efe9;
   display: grid;
   grid-template:
-    "info display" 75%
-    "info buttons" 25%
-    / 1fr 1fr
+    "info display" 70%
+    "info buttons" 30%
+    / 1fr 1fr;
+
+  @include tablet {
+    height: auto;
+    grid-template:
+      "display" 528px
+      "info" 270px
+      "buttons" 215px
+      / 1fr;
+  }
+
+  @include phone {
+    height: auto;
+    grid-template:
+      "display" 260px
+      "info" 218px
+      "buttons" 93px
+      / 1fr;
+  }
 }
 
 .slider__info {
@@ -15,6 +33,16 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  @include tablet {
+    font-size: 14px;
+    padding-bottom: 20px;
+  }
+
+  @include phone {
+    font-size: 13px;
+    padding-bottom: 0;
+  }
 }
 
 .slider__display {
@@ -31,11 +59,23 @@
 
 .works__title{
   max-width: 365px;
+
+  @include tablet {
+    max-width: 100%;
+  }
 }
 
 .works__tech{
   margin: 21px auto 40px auto;
   width: 420px;
+
+  @include tablet {
+    margin: 10px auto 20px auto;
+  }
+
+  @include phone {
+    width: 100%;
+  }
 }
 .works__tech-desc{
   color: $green;
@@ -45,6 +85,10 @@
   text-align: center;
   text-transform: uppercase;
   font-weight: 500;
+
+  @include phone {
+    padding: 6px 0;
+  }
 }
 
 .link__link{
@@ -61,12 +105,21 @@
   &:hover{
     background-color: $green;
   }
+
+  @include phone {
+    padding: 10px 12px 10px 22px;
+  }
 }
 .link__icon{
   width: 22px;
   height: 22px;
   fill: #fff;
   margin-right: 10px;
+
+  @include phone {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .slider__display{
@@ -87,12 +140,16 @@
   height: 80%;
 }
 .slider__main-img-img{
-  height: 100%;
+  width: 50%;
 }
 .slider__button{
   width: 50%;
   overflow: hidden;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 .slider__preveiw{
   display: flex;
@@ -101,7 +158,7 @@
   height: 90%;
 }
 .slider__preveiw-img{
-  height: 100%;
+  width: 50%;
 }
 
 .slider__filter{

@@ -1,32 +1,11 @@
 .works {
   @include tablet {
     flex-direction: column;
+    min-height: auto;
+    height: auto;
   }
 
-  @include phone {
-    min-height: 100%;
-  }
 }
-// .works__left {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: column;
-//   width: 50%;
-//   overflow: hidden;
-//   background-color: #f0efe9;
-// }
-//
-//
-// .works__right {
-//   width: 50%;
-//   height: 100%;
-//   display: flex;
-//
-//   @include tablet {
-//     width: 100%;
-//   }
-// }
 
 .works__reviews {
   background: url('./assets/images/bg/about_bg.png') no-repeat;
