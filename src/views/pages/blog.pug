@@ -1,5 +1,11 @@
 extends ../main.layout.pug
 
+block variables
+  - var title = 'Блог'
+
+block scripts
+  script(src='blog.bundle.js')
+
 block content
   section.section.hero
     .hero__header

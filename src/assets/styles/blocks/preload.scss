@@ -1,0 +1,13 @@
+.preload {
+  display: block;
+  background: url('./assets/images/bg/bg.jpg') center center no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity .5s;
+}
