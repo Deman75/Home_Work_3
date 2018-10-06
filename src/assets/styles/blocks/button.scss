@@ -11,6 +11,7 @@
   transition: background-color .2s;
   &:last-child{
     border-right: none;
+    margin-right: -2px;
   }
 
   &:hover{

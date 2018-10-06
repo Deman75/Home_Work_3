@@ -3,29 +3,68 @@ extends ../auth.layout.pug
 block content
   .wrapper
     .section.section__index
-      .authoriz
-        a(href="").authoriz__link Авторизоваться
-      .welcome
-        .welcome__content
-          .welcome__content-avatar
-            .avatar
-              img.avatar__img(src="./assets/images/photo/photo.jpg", alt="")
-          .welcome__content-desc
-            .title-norm Шапиро Дмитрий
-            .user__desc Личный сайт веб разработчика
-          .welcome__content-socials
-            include ../common/socials.pug            
-        .welcome__buttons
-          ul.button
-            - 
-              var buttons = [
-                ['Мои работы', './works.html'],
-                ['Обо мне', './about.html'],
-                ['Блог', './blog.html'],
-              ]
-            each item in buttons
-              li.button__item
-                a(href=`${item[1]}`).button__links #{item[0]}
+      .authoriz__link
+        button(type="button").authoriz__link-button Авторизоваться
+      .card
+        .flipper
+          .welcome__wrap
+            .card__content
+              .welcome__content-avatar
+                .avatar
+                  img.avatar__img(src="./assets/images/photo/photo.jpg", alt="")
+              .welcome__content-desc
+                .title-norm Шапиро Дмитрий
+                .user__desc Личный сайт веб разработчика
+              .welcome__content-socials
+                include ../common/socials.pug            
+            .card__buttons
+              ul.button
+                - 
+                  var buttons = [
+                    ['Мои работы', './works.html'],
+                    ['Обо мне', './about.html'],
+                    ['Блог', './blog.html'],
+                  ]
+                each item in buttons
+                  li.button__item
+                    a(href=`${item[1]}`).button__links #{item[0]}
+          .authoriz__wrap
+            form(method="post").authoriz
+              .authoriz__content
+                .authoriz__title
+                  .subtitle.subtitle_font_about Авторизуйтесь
+                .authoriz__row
+                  .authoriz__input
+                    .authoriz__icon
+                      +icon('login','authoriz__icon-icon')
+                    input.authoriz__cont(type="text" name="login" placeholder="Логин")
+                  .authoriz__input
+                    .authoriz__icon
+                      +icon('password','authoriz__icon-icon')
+                    input.authoriz__cont(type="text" name="pass" placeholder="Пароль")
+                .authoriz__row
+                    label.authoriz__check
+                      input(type="checkbox" name="check" value="0").check
+                      +icon('check','check__icon-icon')
+                      .check__desck Я человек
+                .authoriz__row
+                  .authoriz__subtitle Вы точно не робот?
+                .authoriz__row.authoriz__row_flex_row
+                  label.authoriz__check
+                    input(type="radio" name="rorbot-radio").authoriz__robot-radio
+                    .authoriz__radio
+                      .authoriz__radio-in
+                    .check__desck Да
+                  label.authoriz__check
+                    input(type="radio" name="rorbot-radio").authoriz__robot-radio
+                    .authoriz__radio
+                      .authoriz__radio-in
+                    .check__desck Не уверен
+                  
+                  
+              .authoriz__row.authoriz__row_flex_row
+                input.form__button.form__button_bg_5(type="submit" name="send" value="На главную")
+                input.form__button.form__button_bg_5(type="submit" name="clear" value="Войти")
       .section__index-copiright
         .copiright
           p © Дмитирй Шапиро | создано с любовью в LoftSchool | 2018
