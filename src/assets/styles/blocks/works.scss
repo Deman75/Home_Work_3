@@ -8,9 +8,9 @@
 }
 
 .works__reviews {
-  background: url('./assets/images/bg/about_bg.png') no-repeat;
-  background-position: center 200px;
-  background-size: cover;
+  // background: url('./assets/images/bg/about_bg.png') no-repeat;
+  // background-position: center 200px;
+  // background-size: cover;
   background-color: #fefefe;
   display: flex;
   align-items: center;
@@ -105,6 +105,17 @@
   color: $green;
 }
 
+.section__feedback {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: url('./assets/images/bg/about_bg.png') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
 .feedback {
   position: relative;
@@ -132,10 +143,14 @@
   bottom: 0;
   background: url('./assets/images/bg/about_bg.png') no-repeat;
   background-size: 1800px;
-  background-position: -708px -541px;
+  background-position: center center;
   filter: blur(5px);
 }
 
+.button-up {
+  position: absolute;
+  bottom: 0px;
+}
 .button-up__icon {
   padding: 20px;
   cursor: pointer;

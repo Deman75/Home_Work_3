@@ -48,21 +48,22 @@ block content
             .review__user-name
               .review__desc-name Ковальчук Дмитрий
               .review__desc-text основатель LoftSchool
-    .feedback
-      .feedback__blur
-      .feedbacl__form
-        form(method="post").form
-          .form__title
-            .subtitle Связаться со мной
-          .form__row
-            input.form__cont(type="text" name="name" placeholder="Имя")
-          .form__row
-            input.form__cont(type="text" name="email" placeholder="Email")
-          .form__row
-            textarea.form__mesage(name="message" rows="8" cols="80" placeholder="Ваше сообщение")
-          .form__row
-            input.form__button(type="submit" name="send" value="Отправить")
-            input.form__button(type="submit" name="clear" value="Очитстиь")
-    .button-up
-      .button-up__icon
-        +icon('arrow_down','button-up__icon-icon')
+    .section__feedback#section__feedback
+      .feedback
+        .feedback__blur#feedback__blur
+        .feedbacl__form
+          form(method="post").form
+            .form__title
+              .subtitle Связаться со мной
+            .form__row
+              input.form__cont(type="text" name="name" placeholder="Имя")
+            .form__row
+              input.form__cont(type="text" name="email" placeholder="Email")
+            .form__row
+              textarea.form__mesage(name="message" rows="8" cols="80" placeholder="Ваше сообщение")
+            .form__row
+              input.form__button(type="submit" name="send" value="Отправить")
+              input.form__button(type="submit" name="clear" value="Очитстиь")
+      .button-up
+        .button-up__icon
+          +icon('arrow_down','button-up__icon-icon')

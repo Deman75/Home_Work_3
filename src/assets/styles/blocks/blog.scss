@@ -6,6 +6,7 @@
 .blog__content {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   margin-top: 58px;
 
   @include tablet {
@@ -17,6 +18,8 @@
 }
 
 .content__menu {
+  position: sticky;
+  top: 0px;
   width: 260px;
   min-width: 260px;
   margin: -2px 78px 0 0px;
