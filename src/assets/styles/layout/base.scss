@@ -12,11 +12,15 @@ body {
   font-family: 'Roboto', Helvetica, sans-serif;
 }
 
-.wrapper {
+.wrapper{
   opacity: 0;
   overflow: hidden;
   min-height: 100%;
   position: relative;
+}
+
+.wrapper_overflow_visible {
+  overflow: visible;
 }
 
 .section {

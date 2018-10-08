@@ -1,0 +1,23 @@
+.hamburger-wrap {
+  display: none;
+  background-color: rgba(0, 191, 165, .87);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.hamburger__menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.hamburger__item {
+  margin: 20px 0;
+}
