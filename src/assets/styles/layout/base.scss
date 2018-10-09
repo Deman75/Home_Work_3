@@ -23,6 +23,10 @@ body {
   overflow: visible;
 }
 
+.maincontent {
+
+}
+
 .section {
   display: flex;
   min-height: 650px;
@@ -50,6 +54,13 @@ p {
 }
 
 button[type="button"] {
+  cursor: pointer;
+
+  &:focus{
+    outline: none;
+  }
+}
+input[type="submit"] {
   cursor: pointer;
 
   &:focus{

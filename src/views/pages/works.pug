@@ -52,18 +52,18 @@ block content
       .feedback
         .feedback__blur#feedback__blur
         .feedbacl__form
-          form(method="post").form
+          form(method="post").form#feedback
             .form__title
               .subtitle Связаться со мной
             .form__row
-              input.form__cont(type="text" name="name" placeholder="Имя")
+              input(type="text" name="name" placeholder="Имя").form__cont#feedbackName
             .form__row
-              input.form__cont(type="text" name="email" placeholder="Email")
+              input(type="text" name="email" placeholder="Email").form__cont#feedbackEmail
             .form__row
-              textarea.form__mesage(name="message" rows="8" cols="80" placeholder="Ваше сообщение")
+              textarea(name="message" rows="8" cols="80" placeholder="Ваше сообщение").form__mesage#feedbackMessage
             .form__row
-              input.form__button(type="submit" name="send" value="Отправить")
-              input.form__button(type="submit" name="clear" value="Очитстиь")
+              input(type="submit" name="send" value="Отправить").form__button#feedbackSend
+              button(type="button" name="clear").form__button#feedbackClear Очистить
       .button-up
         .button-up__icon
           +icon('arrow_down','button-up__icon-icon')

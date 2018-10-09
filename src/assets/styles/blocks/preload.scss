@@ -11,3 +11,49 @@
   opacity: 1;
   transition: opacity .5s;
 }
+
+.preload__wrap, .preload__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  width: 100px;
+  height: 100px;
+  z-index: 110;
+}
+.preload__icon-circle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  fill: transparent;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-dasharray: 251;
+  stroke-dashoffset: 200;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  &_one {
+    animation: circleRotate 1.5s linear infinite;
+  }
+  &_two {
+    animation: circleRotate 1s linear infinite;
+  }
+  &_three {
+    animation: circleRotate .8s linear infinite;
+  }
+}
+
+@keyframes circleRotate {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}

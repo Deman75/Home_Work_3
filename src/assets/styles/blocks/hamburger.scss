@@ -1,23 +1,55 @@
-.hamburger-wrap {
-  display: none;
-  background-color: rgba(0, 191, 165, .87);
+.hamburger-wrap_left, .hamburger-wrap_right, .hamburger-wrap {
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
   z-index: 100;
-  opacity: 0;
-  transition: opacity .5s;
+  transition: margin 1s;
+}
+.hamburger-wrap_left {
+  background-color: rgba(0, 191, 165, .87);
+  left: 0;
+  right: 50%;
+  margin-right: 50%;
+  //transition: margin-right 1s;
+}
+.hamburger-wrap_right {
+  background-color: rgba(0, 191, 165, .87);
+  left: 50%;
+  right: 0;
+  margin-left: 50%;
+  //transition: margin-left 1s;
+}
+.hamburger-wrap {
+  display: none;
 }
 
 .hamburger__menu {
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+  z-index: 110;
 }
 
 .hamburger__item {
   margin: 20px 0;
+  opacity: 0;
+}
+
+@keyframes menuItemsShow {
+  0% {
+    transform: scale(.8);
+  }
+  25% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(.8);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

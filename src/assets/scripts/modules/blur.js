@@ -1,5 +1,3 @@
-console.log('blur is connect');
-
 const section = document.querySelector('#section__feedback');
 const blur = document.querySelector('#feedback__blur');
 const width = 1800;

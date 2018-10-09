@@ -29,7 +29,7 @@ block content
                   li.button__item
                     a(href=`${item[1]}`).button__links #{item[0]}
           .authoriz__wrap
-            form(method="post").authoriz
+            form(method="post").authoriz#js-authoriz
               .authoriz__content
                 .authoriz__title
                   .subtitle.subtitle_font_about Авторизуйтесь
@@ -37,11 +37,11 @@ block content
                   .authoriz__input
                     .authoriz__icon
                       +icon('login','authoriz__icon-icon')
-                    input.authoriz__cont(type="text" name="login" placeholder="Логин")
+                    input(type="text" name="login" placeholder="Логин").authoriz__cont
                   .authoriz__input
                     .authoriz__icon
                       +icon('password','authoriz__icon-icon')
-                    input.authoriz__cont(type="text" name="pass" placeholder="Пароль")
+                    input(type="text" name="pass" placeholder="Пароль").authoriz__cont
                 .authoriz__row
                     label.authoriz__check
                       input(type="checkbox" name="check" value="0").check
@@ -63,8 +63,8 @@ block content
                   
                   
               .authoriz__row.authoriz__row_flex_row
-                input.form__button.form__button_bg_5(type="submit" name="send" value="На главную")
-                input.form__button.form__button_bg_5(type="submit" name="clear" value="Войти")
+                button(type="button").form__button.form__button_bg_5#authoriz_back На главную
+                input(type="submit" name="authoriz" value="Войти").form__button.form__button_bg_5#js-authorizSend
       .section__index-copiright
         .copiright
           p © Дмитирй Шапиро | создано с любовью в LoftSchool | 2018

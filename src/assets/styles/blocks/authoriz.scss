@@ -78,12 +78,13 @@
   outline: none;
   width: 100%;
   color: $text-color;
+  border-radius: 0 5px 5px 0;
   &::placeholder{
     color: rgba(55,62,66, .3);
   }
 
-  &:focus {
-    border: 1px solid #000;
+  &:focus, &:active {
+    border: 1px solid $green;
   }
 
   @include tablet {

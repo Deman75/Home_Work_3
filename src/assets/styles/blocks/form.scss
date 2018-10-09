@@ -27,18 +27,24 @@
   }
 }
 .form__cont {
+  position: relative;
   padding: 12px 17px;
   border: 1px solid transparent;
   outline: none;
   border-radius: 5px;
   width: 340px;
   color: $text-color;
+  border: 1px solid transparent;
   &::placeholder{
     color: rgba(55,62,66, .3);
   }
 
+  &:active {
+    border: 1px solid $green;
+  }
+
   &:focus {
-    border: 1px solid #000;
+    border: 1px solid $green;
   }
 
   @include tablet {
@@ -59,13 +65,18 @@
   outline: none;
   resize: none;
   color: $text-color;
+  border: 1px solid transparent;
 
   &::placeholder {
     color: rgba(55,62,66, .3);
   }
 
+  &:active {
+    border: 1px solid $green;
+  }
+
   &:focus {
-    border: 1px solid #000;
+    border: 1px solid $green;
   }
 
   @include tablet {
