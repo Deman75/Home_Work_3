@@ -5,21 +5,19 @@
   right: 0;
   bottom: 0;
   z-index: 100;
-  transition: margin 1s;
+  transition: margin .5s;
 }
 .hamburger-wrap_left {
   background-color: rgba(0, 191, 165, .87);
   left: 0;
   right: 50%;
   margin-right: 50%;
-  //transition: margin-right 1s;
 }
 .hamburger-wrap_right {
   background-color: rgba(0, 191, 165, .87);
   left: 50%;
   right: 0;
   margin-left: 50%;
-  //transition: margin-left 1s;
 }
 .hamburger-wrap {
   display: none;

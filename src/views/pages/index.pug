@@ -30,6 +30,7 @@ block content
                     a(href=`${item[1]}`).button__links #{item[0]}
           .authoriz__wrap
             form(method="post").authoriz#js-authoriz
+              .authoriz__error-msg#js-error-msg Вы не ввели логин
               .authoriz__content
                 .authoriz__title
                   .subtitle.subtitle_font_about Авторизуйтесь
@@ -44,19 +45,19 @@ block content
                     input(type="text" name="pass" placeholder="Пароль").authoriz__cont
                 .authoriz__row
                     label.authoriz__check
-                      input(type="checkbox" name="check" value="0").check
+                      input(type="checkbox" name="robot-check").authoriz__robot-check
                       +icon('check','check__icon-icon')
                       .check__desck Я человек
                 .authoriz__row
                   .authoriz__subtitle Вы точно не робот?
                 .authoriz__row.authoriz__row_flex_row
                   label.authoriz__check
-                    input(type="radio" name="rorbot-radio").authoriz__robot-radio
+                    input(type="radio" name="robot-radio").authoriz__robot-radio
                     .authoriz__radio
                       .authoriz__radio-in
                     .check__desck Да
                   label.authoriz__check
-                    input(type="radio" name="rorbot-radio").authoriz__robot-radio
+                    input(type="radio" name="robot-radio").authoriz__robot-radio
                     .authoriz__radio
                       .authoriz__radio-in
                     .check__desck Не уверен

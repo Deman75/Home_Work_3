@@ -1,3 +1,4 @@
+const form = document.querySelector('.authoriz');
 const flip = document.querySelector('.flipper');
 const button = document.querySelector('.authoriz__link-button');
 const section = document.querySelector('.section__index');
@@ -36,6 +37,7 @@ section.addEventListener('click', (e) => {
 
 back.addEventListener('click', (e) => {
   e.stopPropagation();
+  form.reset();
   flipCard("back");
 });
 

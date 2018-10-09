@@ -10,10 +10,10 @@ function showMenuItem(show) { // show or hide
   let i = 0;
   if (show === 'show') {
     let showItem = setInterval(() => {
-      items[i].style='opacity: 1; animation: menuItemsShow linear .2s';
+      items[i].style='opacity: 1; animation: menuItemsShow linear .15s';
       i++
       if (i>=items.length) clearInterval(showItem);
-    },200);
+    },150);
   } else if (show === 'hide') {
     for (i = 0; i < items.length; i++) {
       items[i].style='opacity: 0';
@@ -34,7 +34,7 @@ function menuShow (show) {// show or hide
       menu.style='display: block';
       showMenuItem('show');
       animationFlag = false;
-    }, 1000);
+    }, 400);
   } else if (show === 'hide') {
     animationFlag = true;
     burgerIcon.classList.remove('hamburger__icon_active');
@@ -45,7 +45,7 @@ function menuShow (show) {// show or hide
       burgerMenu.style='display: none';
       showMenuItem('hide');
       animationFlag = false;
-    }, 1100);
+    }, 550);
   }
 }
 

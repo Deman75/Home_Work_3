@@ -4,6 +4,38 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  position: relative;
+}
+
+.authoriz__error-msg {
+  position: absolute;
+  display: none;
+  padding: 14px 20px;
+  left: 0;
+  top: 0;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 500;
+  background-color: #e44845;
+  z-index: 10;
+
+  &:after {
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    content: '';
+    display: inline-block;
+    border-top: 20px solid #e44845;
+    border-right: 20px solid #e44845;
+    z-index: 8;
+    transform: rotate(-45deg) translateX(-25%) translateY(-25%);
+  }
+}
+.authoriz__error-msg_arrow_down {
+  &:after {
+    top:auto;
+    bottom: -10px;
+  }
 }
 
 .authoriz__content {
@@ -43,6 +75,7 @@
   align-items: center;
   width: 340px;
   margin-bottom: 20px;
+  position: relative;
 
   @include tablet {
     width: 309px;
@@ -73,6 +106,7 @@
 }
 
 .authoriz__cont {
+  position: relative;
   padding: 12px 17px;
   border: 1px solid transparent;
   outline: none;
@@ -105,7 +139,7 @@
   margin: 0 20px;
 }
 
-.check {
+.authoriz__robot-check {
   position: absolute;
   left: -2000px;
 
@@ -123,7 +157,8 @@
   background-color: $green;
   border-radius: 3px;
   padding: 3px;
-  transition: fill .3s;
+  border: 1px solid transparent;
+  transition: fill .3s, border .3s;
 }
 
 .check__desck {
