@@ -7,9 +7,14 @@ const checkIcon = document.querySelector('.check__icon-icon');
 const robotRadio = document.getElementsByName('robot-radio');
 const radioIcom = document.querySelectorAll('.authoriz__radio');
 
+const axios = require('axios');
+const nameInput = document.getElementsByName('login')[0];
+const passInput = document.getElementsByName('pass')[0];
+
 
 let formSendFail = false; // если true то была ошибка по заполнению формы, и с этого момента
                           // проверяем все поля заново, пока не будет false
+
 
 const checkInputs = function () { // функция проверяет какие есть ли пустые поля и подсвечивает их
   let err = false;                // возвращает true если была ошибка.
@@ -58,15 +63,13 @@ let showErrorMsg = function (show) { // Показывает окно подск
     let left = Math.round(form.getBoundingClientRect().width / 2, 1); //вычисляем центр формы
     errorMsg.style = 'display: block; opasity: 0';
     left = Math.round(left - errorMsg.getBoundingClientRect().width / 2, 1); //вычитаем ширину окна сообщения для выравнивания по центру
+    let msgTop; // в эту переменную будет сохранен необходимая позиция по высоте для сообщения.
+    const msgMarginTop = 20; // отступо по высоте от блока для которого выводим сообщение.
 
     for (let i = 0; i < input.length; i++) { // выводим сообщения на первом попавшемся пустом поле, выводим сообщения и выходим из функции
       if (input[i].value === '') {
-        if (i === 0) {
-          errorMsg.style = `display: block; left: ${left}px; top: 170px`;
-        } else if (i === 1) {
-          errorMsg.innerHTML = 'Вы не ввели пароль';
-          errorMsg.style = `display: block; left: ${left}px; top: 245px`;
-        }
+        msgTop = input[i].getBoundingClientRect().bottom - form.getBoundingClientRect().top + msgMarginTop; // вычисляем положение нижней граници инпута с ошибкой относительно формы.
+        errorMsg.style = `display: block; left: ${left}px; top: ${msgTop}px`;
         return;
       }
     }
@@ -92,7 +95,50 @@ submit.addEventListener("click", (e) => {
   }
   formSendFail = false;
 
-  console.log('Заполнено');
+  if (robotRadio[1].checked) {
+    alert('Наверное Вы робот');
+    return true;
+  }
+
+  console.log('send post on server');
+
+  //================== Отправка формы =======================
+
+
+  axios.interceptors.response.use( // обработка ошибки от сервера.
+    response => {
+      return response;
+    },
+    error => {
+      if (error.response.status === 401) { // если логин или пароль не верны.
+        for (let i = 0; i < input.length; i++) { // подсвечиваем поля логин и пароля.
+          input[i].style = 'border: 1px solid #e44845'
+          inputIcon[i].style = 'fill: #e44845'
+        }
+        formSendFail = true; // устанавливаем флаг об ошибки в полях ввода.
+
+        return;
+      }
+
+      return Promise.reject(error);
+    }
+  );
+
+  axios.post('https://webdev-api.loftschool.com/login', {
+    name: nameInput.value,
+    password: passInput.value
+  })
+  .then(function (response) {
+    if (response.status === 200) {
+      const ttl = Math.floor(Date.now() / 1000 + response.data.ttl)
+      localStorage.setItem('token', response.data.token);
+      localStorage.setItem('ttl', ttl);
+    }
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+
 });
 
 form.addEventListener('input', () => {
