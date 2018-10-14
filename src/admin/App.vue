@@ -14,16 +14,17 @@
 import header from "./components/app-header";
 import tabs from "./components/tabs";
 import skills from "./components/skills";
+import { mapActions, mapState } from "vuex";
 
-const data = [
-  {id: 1, title: 'Html', percent: 20, category: 0 },
-  {id: 2, title: 'Php', percent: 32, category: 1 },
-  {id: 3, title: 'CSS', percent: 14, category: 0 },
-  {id: 4, title: 'Node.js', percent: 54, category: 1 },
-  {id: 5, title: 'Mongo', percent: 32, category: 1 },
-  {id: 6, title: 'Git', percent: 87, category: 2 },
-  {id: 7, title: 'Gulp', percent: 43, category: 2 }
-];
+// const data = [
+//   {id: 1, title: 'Html', percent: 20, category: 0 },
+//   {id: 2, title: 'Php', percent: 32, category: 1 },
+//   {id: 3, title: 'CSS', percent: 14, category: 0 },
+//   {id: 4, title: 'Node.js', percent: 54, category: 1 },
+//   {id: 5, title: 'Mongo', percent: 32, category: 1 },
+//   {id: 6, title: 'Git', percent: 87, category: 2 },
+//   {id: 7, title: 'Gulp', percent: 43, category: 2 }
+// ];
 
 export default {
   components: {
@@ -31,10 +32,23 @@ export default {
     tabs: tabs,
     skills: skills
   },
-  data() {
-    return {
-      skills: data
-    }
+  // data() {
+  //   return {
+  //     skills: data
+  //   }
+  // },
+  computed: {
+    ...mapState('skills', {
+      skills: state => state.data
+    })
+  },
+  created(){
+    this.fetchSkills();
+  },
+  methods: {
+    ...mapActions({
+      fetchSkills: "skills/fetch"
+    })
   }
 };
 
