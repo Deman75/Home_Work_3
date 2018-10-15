@@ -1,21 +1,25 @@
 <template lang="pug">
-.skills__wrap
-  app-title(
-    title = "Мои работы"
-    )
-  skills-row(
-    v-for="type in types"
-    :key="type.id"
-    :type="type"
-    :skills="skills"
-    )
+div
+  .tabs__content
+    app-title(
+      title = "Обо мне"
+      )
+    skills-row(
+      v-for="type in types"
+      :key="type.id"
+      :type="type"
+      :skills="skills"
+      )
+  button(
+    type="button"
+    ).button Сохранить
 </template>
 
 <script>
 
   import title from "./title";
   import skillsRow from "./skillsRow";
-  
+
   export default {
     components: {
       appTitle: title,
@@ -41,10 +45,25 @@
 
 <style lang="scss">
 
-  .skills__wrap {
+  .tabs__content {
     width: 100%;
-    height: 100%;
-    padding: 0 20px;
+    margin-bottom: 40px;
   }
-  
+  .button {
+    padding: 10px;
+    width: 110px;
+    border-radius: 5px;
+    background-color: rgba(0,191,165,.8);
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color .2s;
+
+    &:hover {
+      background-color: rgba(0,191,165,1);
+    }
+
+  }
+
 </style>

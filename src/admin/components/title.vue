@@ -1,5 +1,5 @@
 <template lang="pug">
-  h2.subtitle Страница "{{title}}"
+  h2.subtitle Страница «{{title}}»
 </template>
 
 <script>
