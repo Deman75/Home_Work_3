@@ -24,7 +24,7 @@ router.beforeEach((to, from, next) => {
   })
     .catch(error => {
       localStorage.removeItem('token');
-      window.location.href="./index.html";
+      window.location.href="../index.html";
     });
 });
 
