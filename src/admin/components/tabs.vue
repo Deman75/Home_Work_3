@@ -1,17 +1,32 @@
 <template lang="pug">
-ul.tabs__list
-  li.tabs__item.tabs__item_activ Скилы
-  li.tabs__item Статьи
-  li.tabs__item Работы
+.tabs__list
+  router-link(
+    v-for="tab in tabs"
+    :key="tab.tabName"
+    :to="tab.href"
+    ).tabs__item {{ tab.tabName }}
 </template>
 
+<script>
+  export default {
+    data() {
+      return {
+        tabs: [
+          {tabName: 'Обо мне', href: '/'},
+          {tabName: 'Блог', href: '/blog'},
+          {tabName: 'Мои работы', href: '/works'},
+        ]
+      }
+    }
+  }
+</script>
 
 <style lang="scss">
   .tabs__list {
     background-color: #f0efe9;
     display: flex;
   }
-  
+
   .tabs__item {
     display: flex;
     justify-content: center;
@@ -23,16 +38,17 @@ ul.tabs__list
     border-right: 2px solid rgba(255,255,255, .7);
     transition: background-color .2s;
     cursor: pointer;
-    
+    text-decoration: none;
+
     &:hover {
       background-color: rgba(255,255,255, .5);
     }
   }
-  
-  .tabs__item_activ {
+
+  .router-link-exact-active {
     background-color: #fff;
     cursor: default;
-    
+
     &:hover {
       background-color: #fff;
     }

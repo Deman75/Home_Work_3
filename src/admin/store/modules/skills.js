@@ -7,7 +7,7 @@ const skills = {
     loadSkills: (state, skills) => (state.data = skills),
     addNewSkill: (state, newSkill) => state.data.push(newSkill),
     removeSkill: (state, skillId) =>
-      (state.data = state.data.filter(skill => skill.id !== skillId))
+      (state.data = state.data.filter(skill => skill.id !== skillId)),
   },
   actions: {
     fetch({commit}) { // придуманое имя, может быть любым

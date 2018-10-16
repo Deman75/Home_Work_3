@@ -12,13 +12,15 @@ div
       )
   button(
     type="button"
+    @click="saveAllChange"
     ).button Сохранить
 </template>
 
 <script>
 
-  import title from "./title";
+  import title from "../title";
   import skillsRow from "./skillsRow";
+  import { mapActions } from "vuex";
 
   export default {
     components: {
@@ -39,11 +41,16 @@ div
           {id: 2, name: 'WorkFlow'},
         ]
       }
-    }
+    },
+    methods: {
+      ...mapActions({
+        saveAllChange: 'skills/save'
+      })
+    },
   };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
   .tabs__content {
     width: 100%;
@@ -63,7 +70,6 @@ div
     &:hover {
       background-color: rgba(0,191,165,1);
     }
-
   }
 
 </style>

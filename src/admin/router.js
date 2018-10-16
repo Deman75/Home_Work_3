@@ -8,7 +8,24 @@ const guard = axios.create({
   baseURL: 'https://webdev-api.loftschool.com'
 });
 
-const routes = [];
+import skills from "./components/skills/skills";
+import blog from "./components/blog/blog";
+import works from "./components/works/works";
+
+const routes = [
+  {
+    path: '/',
+    component: skills
+  },
+  {
+    path: '/blog',
+    component: blog
+  },
+  {
+    path: '/works',
+    component: works
+  }
+];
 
 const router = new VueRouter({ routes });
 
@@ -20,6 +37,9 @@ router.beforeEach((to, from, next) => {
       }
   })
     .then(response => {
+      const wrap = document.querySelector('.wrapper'); //?
+
+      wrap.style='display: block';
       next();
   })
     .catch(error => {

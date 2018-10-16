@@ -5,22 +5,26 @@
     .tabs
       tabs
     .content
-      skills(
-        :skills= "skills"
-      )
+      router-view(
+        :skills="skills"
+        )
 </template>
 
 <script>
 import header from "./components/app-header";
 import tabs from "./components/tabs";
-import skills from "./components/skills";
+import skills from "./components/skills/skills";
+import blog from "./components/blog/blog.vue";
+import works from "./components/works/works.vue";
 import { mapActions, mapState } from "vuex";
 
 export default {
   components: {
     appHeader: header,
     tabs: tabs,
-    skills: skills
+    skills: skills,
+    blog: blog,
+    works: works
   },
   computed: {
     ...mapState('skills', {
@@ -29,10 +33,14 @@ export default {
   },
   created(){
     this.fetchSkills();
+    this.fetchBlog();
   },
   methods: {
     ...mapActions({
       fetchSkills: "skills/fetch"
+    }),
+    ...mapActions({
+      fetchBlog: "blog/fetch"
     })
   }
 };
@@ -95,6 +103,7 @@ export default {
     height: 100%;
     min-height: 650px;
     overflow: hidden;
+    display: none;
   }
 
   #root {

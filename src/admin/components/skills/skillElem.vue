@@ -57,7 +57,7 @@ export default {
         title: "",
         percents: 0,
         category: this.typeId
-      }
+      },
     }
   },
   methods: {
@@ -69,7 +69,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .skills__name {
     display: flex;
     align-items: center;
@@ -109,7 +109,19 @@ export default {
       font-size: 16px;
     }
   }
-  .skill__button {
+  .button {
+    padding: 10px;
+    width: 110px;
+    border-radius: 5px;
+    background-color: rgba(0,191,165,.8);
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color .2s;
 
+    &:hover {
+      background-color: rgba(0,191,165,1);
+    }
   }
 </style>

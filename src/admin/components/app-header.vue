@@ -1,11 +1,31 @@
 <template lang="pug">
 .header__component
   h2.title Панель администрирования
-  a(href="./index.html").link-back Вернуться на сайт
+  a(
+    @click="logout"
+    href="../index.html"
+    ).link-back Вернуться на сайт
 </template>
 
+<script>
+  import axios from "axios";
 
-<style lang="scss">
+  export default {
+    methods: {
+      logout: function (event) {
+        event.preventDefault();
+        axios.post('/logout').then(() => {
+          window.location.href="../index.html";
+        }, error => {
+          console.error(error);
+        })
+        console.log("logout");
+      }
+    }
+  }
+</script>
+
+<style lang="scss" scoped>
   .header__component {
     display: flex;
     justify-content: space-between;
@@ -22,7 +42,7 @@
     transition: color .2s;
     padding: 10px 0;
     font-weight: 500;
-    
+
     &:hover {
       color: rgba(255,255,255, 1);
     }
