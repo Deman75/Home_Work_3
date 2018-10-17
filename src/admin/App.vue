@@ -7,6 +7,7 @@
     .content
       router-view(
         :skills="skills"
+        :blogs="blogs"
         )
 </template>
 
@@ -29,6 +30,9 @@ export default {
   computed: {
     ...mapState('skills', {
       skills: state => state.data
+    }),
+    ...mapState('blogs', {
+      blogs: state => state.data
     })
   },
   created(){
@@ -40,7 +44,7 @@ export default {
       fetchSkills: "skills/fetch"
     }),
     ...mapActions({
-      fetchBlog: "blog/fetch"
+      fetchBlog: "blogs/fetch"
     })
   }
 };

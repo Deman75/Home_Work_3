@@ -11,8 +11,7 @@ div
     input(
       type="date"
       placeholder="Дата"
-      /* onfocus="(this.type='date')" */
-      v-model="newBlog.date"
+      v-model.string="newBlog.date"
       ).input.date
   .row
     textarea(
@@ -40,7 +39,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      addNewBlog: 'blog/add',
+      addNewBlog: 'blogs/add',
     })
   }
 }
