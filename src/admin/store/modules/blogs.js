@@ -6,7 +6,7 @@ const blogs = {
   mutations: {
     loadBlogs: (state, blogs) => (state.data = blogs),
     addNewBlog: (state, newBlog) => state.data.push(newBlog),
-    removeSkill: (state, blogId) =>
+    removeBlog: (state, blogId) =>
       (state.data = state.data.filter(blog => blog.id !== blogId)),
   },
   actions: {
@@ -30,7 +30,7 @@ const blogs = {
     },
     remove({ commit }, blogId) {
       this.$axios.delete(`/posts/${blogId}`).then(response => {
-        commit("removeSkill", blogId)
+        commit("removeBlog", blogId)
       }, error => {
         console.error(error);
       })

@@ -6,7 +6,7 @@ tr(v-if="editmode === false")
       type="text"
       :placeholder="skill.percents"
       ).skills__input.skills__percent
-    | %
+    span %
   td
     button(
       type="button"
@@ -24,7 +24,7 @@ tr(v-else)
       type="text"
       placeholder="0-100"
       v-model="newSkill.percents"
-    ).skills__input.add__percent
+    ).skills__input.skills__percent
     span %
   td
     button(
@@ -78,6 +78,10 @@ export default {
   .percent {
     text-align: right;
     padding-right: 10px;
+
+    @media screen and (max-width: 480px) {
+      width: 63px;
+    }
   }
   .skills__percent {
     display: inline-block;
@@ -85,9 +89,17 @@ export default {
     height: 33px;
     padding: 10px 0;
     text-align: center;
+
+    @media screen and (max-width: 480px) {
+      width: 30px;
+    }
   }
   .add__title {
     padding: 0 0 0 10px;
+
+    @media screen and (max-width: 480px) {
+      width: 100%;
+    }
   }
   .add__percent {
     width: 47px;
@@ -122,6 +134,12 @@ export default {
 
     &:hover {
       background-color: rgba(0,191,165,1);
+    }
+
+    @media screen and (max-width: 480px) {
+      width: 85px;
+      padding: 5px 0;
+      font-size: 14px;
     }
   }
 </style>

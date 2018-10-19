@@ -37,13 +37,26 @@ export default {
   justify-content: space-between;
   width: 100%;
   height: 100%;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    overflow: auto;
+  }
 }
 .content__right {
   height: 70%;
   width: 40%;
   overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    width: 90%
+  }
 }
 .content__right {
   width: 60%;
+
+  @media screen and (max-width: 768px) {
+    width: 90%
+  }
 }
 </style>

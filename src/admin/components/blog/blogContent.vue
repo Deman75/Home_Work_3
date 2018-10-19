@@ -62,11 +62,19 @@ export default {
     font-weight: 300;
     font-size: 16px;
   }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 .textarea {
   width: 500px;
   height: 155px;
   overflow: scroll;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 .button {
   padding: 10px;

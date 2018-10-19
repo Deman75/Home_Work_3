@@ -25,6 +25,10 @@
   .tabs__list {
     background-color: #f0efe9;
     display: flex;
+
+    @media screen and (max-width: 480px) {
+      flex-direction: column;
+    }
   }
 
   .tabs__item {
@@ -42,6 +46,15 @@
 
     &:hover {
       background-color: rgba(255,255,255, .5);
+    }
+
+    @media screen and (max-width: 480px) {
+      width: 100%;
+      border-bottom: 2px solid #fff;
+
+      &:last-child {
+        border-bottom: none;
+      }
     }
   }
 

@@ -8,6 +8,7 @@
       router-view(
         :skills="skills"
         :blogs="blogs"
+        :works="works"
         )
 </template>
 
@@ -33,6 +34,9 @@ export default {
     }),
     ...mapState('blogs', {
       blogs: state => state.data
+    }),
+    ...mapState('works', {
+      works: state => state.data
     })
   },
   created(){
@@ -45,6 +49,9 @@ export default {
     }),
     ...mapActions({
       fetchBlog: "blogs/fetch"
+    }),
+    ...mapActions({
+      fetchBlog: "works/fetch"
     })
   }
 };
@@ -108,6 +115,10 @@ export default {
     min-height: 650px;
     overflow: hidden;
     display: none;
+
+    @media screen and (max-width: 768px) {
+      overflow: auto;
+    }
   }
 
   #root {

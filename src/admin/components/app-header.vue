@@ -31,11 +31,23 @@
     justify-content: space-between;
     background-color: $green;
     padding: 28px;
+
+    @media screen and (max-width: 480px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
   }
   .title {
     font-size: 28px;
     color: #fff;
     font-weight: 500;
+
+    @media screen and (max-width: 480px) {
+      font-size: 21px;
+      order: 2;
+    }
   }
   .link-back {
     color: rgba(255,255,255, .7);
@@ -45,6 +57,11 @@
 
     &:hover {
       color: rgba(255,255,255, 1);
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 16px;
+      order: 1;
     }
   }
 </style>

@@ -8,7 +8,7 @@ axios.interceptors.response.use(
   response => {
     return response
   }, error => {
-    let ttl = parceInt(localStorage.getItem('ttl'));
+    let ttl = parseInt(localStorage.getItem('ttl'));
     const dateNowInSeconds = Math.floor(Data.now() / 1000);
     const originalReauest = error.config;
     const marginOfTtl = 10;

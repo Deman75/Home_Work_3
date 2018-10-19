@@ -55,6 +55,11 @@ div
   .tabs__content {
     width: 100%;
     margin-bottom: 40px;
+
+    @media screen and (max-width: 480px) {
+      width: 100%;
+      margin-bottom: 0;
+    }
   }
   .button {
     padding: 10px;
@@ -69,6 +74,11 @@ div
 
     &:hover {
       background-color: rgba(0,191,165,1);
+    }
+
+    @media screen and (max-width: 480px) {
+      margin-bottom: 20px;
+      content: '';
     }
   }
 

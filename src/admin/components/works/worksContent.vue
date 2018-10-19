@@ -5,25 +5,66 @@ div
     input(
       type="text"
       placeholder="Название проекта"
+      v-model="newWork.title"
       ).input
   .row
     input(
       type="text"
       placeholder="Технологии"
+      v-model="newWork.techs"
+      ).input
+  .row
+    input(
+      type="text"
+      placeholder="Ссылка на сайт"
+      v-model="newWork.link"
       ).input
   .row
     label.add__file
       input(
         type="file"
+        /* v-on:change="addFile()" */
+        ref="myFiles"
+        multiple
         ).add_input
       .file__title Загрузить картинку
   button(
     type="button"
+    @click="addFile"
     ).button Добавить
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
+  data() {
+    return {
+      newWork: {
+        title: '',
+        techs: '',
+        photo: '',
+        link: ''
+      },
+      formSend: ''
+    }
+  },
+  methods: {
+    ...mapActions({
+      addNewWork: 'works/add',
+    }),
+    addFile() {
+      let formData = new FormData();
+
+      formData.append('title', this.newWork.title);
+      formData.append('techs', this.newWork.techs);
+      formData.append('photo', this.$refs.myFiles.files[0]);
+      formData.append('link', this.newWork.link);
+
+      this.addNewWork(formData);
+      console.log(formData);
+    }
+  }
 
 }
 </script>
@@ -73,6 +114,10 @@ export default {
   &::placeholder {
     font-weight: 300;
     font-size: 16px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 90%;
   }
 }
 .textarea {

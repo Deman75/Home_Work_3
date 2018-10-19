@@ -43,6 +43,10 @@ export default {
   .skills__wrap {
     display: inline-block;
     margin: 0 40px 40px 0;
+
+    @media screen and (max-width: 480px) {
+      margin: 0 0 20px 0;
+    }
   }
   .skills-title {
     display: inline-block;
