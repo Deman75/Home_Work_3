@@ -42,6 +42,7 @@ export default {
   created(){
     this.fetchSkills();
     this.fetchBlog();
+    this.fetchWorks();
   },
   methods: {
     ...mapActions({
@@ -51,7 +52,7 @@ export default {
       fetchBlog: "blogs/fetch"
     }),
     ...mapActions({
-      fetchBlog: "works/fetch"
+      fetchWorks: "works/fetch"
     })
   }
 };

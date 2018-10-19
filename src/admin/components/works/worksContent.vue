@@ -27,6 +27,9 @@ div
         ref="myFiles"
         multiple
         ).add_input
+      .file__icon
+        svg.file__icon-img
+          use(xlink:href="/assets/images/icons/sprite.svg#add-img")
       .file__title Загрузить картинку
   button(
     type="button"
@@ -76,27 +79,35 @@ export default {
 .add__file {
   position: relative;
   overflow: hidden;
-  color: $green;
+  color: rgba(0,191,165,.8);
+  background-color: rgba(255,255,255, .8);
   cursor: pointer;
+  display: inline-flex;
+  padding: 5px 10px 5px 5px;
+  border-radius: 5px;
+  align-items: center;
+  transition: color .2s, background-color .2s;
+  .file__icon {
+    .file__icon-img {
+      fill: rgba(0,191,165,8);
+    }
+  }
+
+  &:hover {
+    color: rgba(0,191,165,1);
+    background-color: #fff;
+    .file__icon {
+      .file__icon-img {
+        fill: rgba(0,191,165,1);
+      }
+    }
+  }
 }
 .file__title {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-
-  &:after {
-    content: '';
-    width: 0;
-    height: 1px;
-    background-color: $green;
-    transition: width .2s;
-  }
-
-  &:hover {
-    &:after {
-      width: 100%;
-    }
-  }
+  font-weight: 500;
 }
 .add_input {
   position: absolute;
@@ -125,6 +136,18 @@ export default {
   height: 155px;
   overflow: scroll;
 }
+
+.file__icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+.file__icon-img {
+  width: 100%;
+  height: 100%;
+  transition: fill .2s;
+}
+
 .button {
   padding: 10px;
   width: 110px;
