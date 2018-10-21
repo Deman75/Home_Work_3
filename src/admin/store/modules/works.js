@@ -20,17 +20,16 @@ const works = {
       );
     },
     add({commit}, newWork) {
-      this.$axios.post('/works', newWork, {
-        headers: {
-          'Content-Type': "application/json"
-        }
-      }).then(response => {
+      const formData = new FormData();
+
+      Object.keys(newWork).forEach(key => formData.append(key, newWork[key]));
+
+      this.$axios.post('/works', formData).then(response => {
         commit('addNewWork', response.data)
       },
       error => {
-        console.error(error)
-        }
-      );
+        console.error(error);
+      });
     },
     remove({ commit }, workId) {
       this.$axios.delete(`/works/${workId}`).then(response => {

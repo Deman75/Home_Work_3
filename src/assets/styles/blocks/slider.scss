@@ -50,11 +50,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
 }
 
 .slider__buttons {
   grid-area: buttons;
   display: flex;
+  user-select: none;
 }
 
 .works__title{

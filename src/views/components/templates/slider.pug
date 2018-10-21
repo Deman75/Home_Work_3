@@ -8,7 +8,8 @@ script(type="text/x-template")#slider-root
       )
     buttons(
         @slide="handleSlide"
-        :index="currentIndex"
+        :prevObj="works[prevIndex]"
+        :nextObj="works[nextIndex]"
         :works="works"
       )
     
@@ -17,7 +18,7 @@ script(type="text/x-template")#slider-info
     .works__title
       .subtitle {{work.title}}
     .works__tech 
-      .works__tech-desc {{work.skills}}
+      .works__tech-desc {{work.techs}}
     .works__link
       a(:href="work.link" target="_blanck").link__link
         +icon('link','link__icon')
@@ -26,19 +27,31 @@ script(type="text/x-template")#slider-display
   .slider__display
     .slider__main
       .slider__main-img-wrap
-        img(:src="work.photo", alt="").slider__main-img-img
+        img(
+          v-if="work.photo !== ''"
+          :src="`https://webdev-api.loftschool.com/${work.photo}`"
+          alt=""
+          ).slider__main-img-img
 
 script(type="text/x-template")#slider-buttons
   .slider__buttons
     .slider__button(@click="slide('prev')")
       .slider__preveiw
-        img(:src="prevButtonWorks[index].photo", alt="").slider__preveiw-img
+        img(
+          v-if="prevObj && prevObj.photo"
+          :src="`https://webdev-api.loftschool.com/${prevObj.photo}`"
+          alt=""
+          ).slider__preveiw-img
       .slider__filter
         .slider__arrow_down
           +icon('arrow_down','slider__arrow-icon')
     .slider__button(@click="slide('next')")
       .slider__preveiw
-        img(:src="nextButtonWorks[index].photo", alt="").slider__preveiw-img
+        img(
+          v-if="nextObj && nextObj.photo"
+          :src="`https://webdev-api.loftschool.com/${nextObj.photo}`" 
+          alt=""
+          ).slider__preveiw-img
       .slider__filter
         .slider__arrow_up
           +icon('arrow_down','slider__arrow-icon')

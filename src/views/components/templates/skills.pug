@@ -1,23 +1,25 @@
 script(type="text/x-template")#skills-list
   ul.skills-list
     li.skills-list__item(
-      v-for="skillsRow in skills"
-      :key="skillsRow.skillsGroup"
+      v-for="type in types"
+      :key="type.id"
       )
       skills-row(
-          :skills="skillsRow"
+          :skills="skills"
+          :type="type"
         )
 
 script(type="text/x-template")#skills-item
   .skllls-row
-    .skills-list__title {{skills.skillsGroup}}
+    .skills-list__title {{type.name}}
     ul.skills
       li.skills-list__item
         skill(
-          v-for="(skillPercentage, skillTitle) in skills.skills"
-          :key="skills.title"
-          :title="skillTitle"
-          :percentage="skillPercentage"
+          v-for="skill in skills"
+          :key="skill.id"
+          v-if="skill.category === type.id"
+          :percentage="skill.percents"
+          :title="skill.title"
         )
 
 

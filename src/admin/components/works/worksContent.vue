@@ -23,9 +23,7 @@ div
     label.add__file
       input(
         type="file"
-        /* v-on:change="addFile()" */
-        ref="myFiles"
-        multiple
+        v-on:change="renderAndAddFile"
         ).add_input
       .file__icon
         svg.file__icon-img
@@ -33,8 +31,9 @@ div
       .file__title Загрузить картинку
   button(
     type="button"
-    @click="addFile"
+    @click="addNewWork(newWork)"
     ).button Добавить
+  .preview(:style="{backgroundImage: previewPic}")
 </template>
 
 <script>
@@ -46,26 +45,30 @@ export default {
       newWork: {
         title: '',
         techs: '',
-        photo: '',
+        photo: {},
         link: ''
       },
-      formSend: ''
+      previewPic: ''
     }
   },
   methods: {
     ...mapActions({
       addNewWork: 'works/add',
     }),
-    addFile() {
-      let formData = new FormData();
+    renderAndAddFile(event) {
+      const file = event.target.files[0];
+      const renderer = new FileReader();
 
-      formData.append('title', this.newWork.title);
-      formData.append('techs', this.newWork.techs);
-      formData.append('photo', this.$refs.myFiles.files[0]);
-      formData.append('link', this.newWork.link);
+      renderer.readAsDataURL(file);
 
-      this.addNewWork(formData);
-      console.log(formData);
+      renderer.onloadend = () => {
+        this.previewPic = `url(${renderer.result})`;
+      };
+      renderer.oneerror = () => {
+        console.log('Не удалось открыть файл');
+      };
+
+      this.newWork.photo = file;
     }
   }
 
@@ -162,5 +165,11 @@ export default {
   &:hover {
     background-color: rgba(0,191,165,1);
   }
+}
+
+.preview {
+  width: 200px;
+  height: 200px;
+  background: center center / contain no-repeat;
 }
 </style>
