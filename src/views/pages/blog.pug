@@ -37,23 +37,4 @@ block content
       
   section.section.section__blog
     .section__title_arrow.section__title_arrow_blog
-    .blog__content
-      .content__menu.js-aside-menu
-        ul.content__menu-list.js-menu-list
-          each article in locals.blog
-            li.content__menu-item.js-scroll-article
-              button(type='button' data-index-button=article.index).content__menu-link=article.title
-      .content__blog
-        ul.blog.js-articles
-          each article in locals.blog
-            li.blog__item.js-article(data-article=article.index)
-              .blog__title 
-                p=article.title
-              .blog__date 
-                p=article.date
-              .blog__text
-                p=article.text
-                if (article.image != null)
-                  br
-                  br
-                  img(src=`${article.image}` alt="" width="100%")
+    #blog-component

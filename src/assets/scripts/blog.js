@@ -1,4 +1,4 @@
+import "./modules/app-blog";
 import "./modules/preload";
-import "./modules/blogScroll";
 import "./modules/hamburger";
 import "./modules/arrowButton";

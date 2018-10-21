@@ -7,12 +7,14 @@ const info = {
     work: Object
   }
 };
+
 const display = {
   template: "#slider-display",
   props: {
     work: Object
   }
 };
+
 const buttons = {
   template: "#slider-buttons",
   props: {
@@ -27,20 +29,12 @@ const buttons = {
       default: () => {}
     }
   },
-  data() {
-    return {
-      prevButtonWorks: [],
-      nextButtonWorks: [],
-    }
-  },
   methods: {
     slide(direction) {
       this.$emit('slide', direction);
     },
   }
 };
-
-
 
 new Vue ({
   el: "#slider-component",
