@@ -8,6 +8,7 @@
         :key="skill.id"
         v-if="skill.category === type.id"
         :skill="skill"
+        @change="$emit('change', $event)"
         )
       skill-elem(
         :editmode="true"

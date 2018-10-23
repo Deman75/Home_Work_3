@@ -5,6 +5,8 @@ tr(v-if="editmode === false")
     input(
       type="text"
       :placeholder="skill.percents"
+      @input="onChange"
+      v-model="value"
       ).skills__input.skills__percent
     span %
   td
@@ -53,6 +55,7 @@ export default {
   },
   data() {
     return {
+      value: '',
       newSkill: {
         title: "",
         percents: 0,
@@ -60,11 +63,25 @@ export default {
       },
     }
   },
+  watch: {
+    'skill.percents'(newVal){
+      if (newVal == this.value) this.value = ''
+    }
+  },
   methods: {
     ...mapActions({
       addNewSkill: 'skills/add',
       removeSkill: 'skills/remove'
-    })
+    }),
+    onChange(){
+      this._$_$timeoutId && clearTimeout(this._$_$timeoutId)
+      this._$_$timeoutId = setTimeout(() => {
+        this.$emit('change', {
+          ...this.skill,
+          percents: this.value
+        })
+      }, 300)
+    }
   }
 };
 </script>

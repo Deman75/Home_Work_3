@@ -1,5 +1,5 @@
 <template lang="pug">
-.skills__wrap
+div
   .tabs__content
     app-title(
       title = "Обо мне"
@@ -9,18 +9,19 @@
       :key="type.id"
       :type="type"
       :skills="skills"
+      @change="onChange"
       )
   button(
     type="button"
-    @click="saveAllChange"
+    @click="saveAllChanges"
     ).button Сохранить
 </template>
 
 <script>
-
+/*eslint-disable*/
   import title from "../title";
   import skillsRow from "./skillsRow";
-  import { mapActions } from "vuex";
+  import { mapActions, mapState } from "vuex";
 
   export default {
     components: {
@@ -39,13 +40,30 @@
           {id: 0, name: 'Frontend'},
           {id: 1, name: 'Backend'},
           {id: 2, name: 'WorkFlow'},
-        ]
+        ],
       }
+    },
+    created(){
+    console.log(this.changedSkills)
+    },
+    computed: {
+      ...mapState('skills',[
+        'changedSkills'
+      ])
     },
     methods: {
       ...mapActions({
-        saveAllChange: 'skills/save'
-      })
+        saveAllChange: 'skills/save',
+        addChangedSkill: 'skills/addChangedSkill',
+        saveChangedSkills: 'skills/saveChangedSkills'
+      }),
+      onChange( changedSkillObject ){
+        this.addChangedSkill(changedSkillObject)
+      },
+      saveAllChanges(){
+        this.saveChangedSkills()
+          .then(console.log)
+      }
     },
   };
 </script>
