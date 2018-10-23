@@ -1,7 +1,4 @@
 .section__index {
-  // background: url('./assets/images/bg/welcome_bg.jpg') no-repeat;
-  // background-size: cover;
-  // justify-content: space-between;
   flex-direction: column;
   align-items: center;
   position: relative;
@@ -145,7 +142,7 @@
   bottom: 34px;
 
   @include phone {
-    margin-bottom: 0;
+    bottom: 5px;
     text-align: center;
   }
 }
