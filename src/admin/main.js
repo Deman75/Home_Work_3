@@ -7,6 +7,17 @@ import axiosRequest from './request';
 
 store.$axios = axiosRequest;
 
+Vue.directive('resize', {
+  inserted: function (el, binding) {
+    let f = function (evt) {
+      if (binding.value(evt, el)) {
+        window.removeEventListener('resize', f)
+      }
+    }
+    window.addEventListener('resize', f)
+  }
+})
+
 new Vue({
   el: "#admin-app",
   router,

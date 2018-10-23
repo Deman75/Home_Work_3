@@ -31,7 +31,14 @@ new Vue ({
     wrapper.classList.add('wrapper_overflow_visible');
 
     axios.get('https://webdev-api.loftschool.com/posts/30').then(response => {
-      this.posts = response.data;
+      let blogsBeforeChangeDate = response.data;
+      const options = {year: 'numeric', month: 'numeric', day: 'numeric'};
+      for (let i = 0; i < blogsBeforeChangeDate.length; i++) {
+        let date = new Date(parseInt(blogsBeforeChangeDate[i].date)*1000);
+        date = date.toLocaleDateString('ru', options);
+        blogsBeforeChangeDate[i].date = date;
+      }
+      this.posts = blogsBeforeChangeDate;
     })
   },
   methods: {

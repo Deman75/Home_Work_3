@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+.skills__wrap
   .tabs__content
     app-title(
       title = "Обо мне"

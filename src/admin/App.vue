@@ -1,5 +1,7 @@
 <template lang="pug">
-  #root
+  #root(
+    v-resize="handleResize"
+    )
     .header
       app-header
     .tabs
@@ -37,7 +39,7 @@ export default {
     }),
     ...mapState('works', {
       works: state => state.data
-    })
+    }),
   },
   created(){
     this.fetchSkills();
@@ -53,7 +55,10 @@ export default {
     }),
     ...mapActions({
       fetchWorks: "works/fetch"
-    })
+    }),
+    handleResize: function () {
+
+    },
   }
 };
 
@@ -114,7 +119,7 @@ export default {
     width: 100%;
     height: 100%;
     min-height: 650px;
-    overflow: hidden;
+    overflow: auto;
     display: none;
 
     @media screen and (max-width: 768px) {
@@ -125,6 +130,10 @@ export default {
   #root {
     width: 100%;
     height: 100%;
+
+    @media screen and (max-width: 768px) {
+      height: auto;
+    }
   }
 
   .content {
