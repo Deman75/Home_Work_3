@@ -8,18 +8,11 @@
 </template>
 
 <script>
-  import axios from "axios";
-
   export default {
     methods: {
       logout: function (event) {
         event.preventDefault();
-        axios.post('/logout').then(() => {
-          window.location.href="../index.html";
-        }, error => {
-          console.error(error);
-        })
-        console.log("logout");
+        window.location.href="../../index.html";
       }
     }
   }
