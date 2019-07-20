@@ -39,6 +39,8 @@
         .title-norm.title-norm_color_white.title-norm_hero Шапиро Дмитрий
         .user__desc.user__desc_color_white Личный сайт веб разработчика
   .hero__decor
-    +icon('portfolio_header', 'hero__decor-icon')
+    svg(class="hero__decor-icon")
+      use(xlink:href="/assets/images/svg/portfolio_header.svg#portfolio_header")
+    //- +icon('portfolio_header', 'hero__decor-icon')
   .hero__arrow
     +icon('arrow_down', 'hero__arrow-icon')

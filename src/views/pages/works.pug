@@ -12,7 +12,8 @@ block content
   .section__title.section__title_arrow
     .title
       .title__background
-        +icon('works_header', 'title__background-icon')
+        svg(class="title__background-icon")
+          use(xlink:href="/assets/images/svg/works_header.svg#works_header")
       .title__title Мои работы
   section.section.works
     #slider-component
